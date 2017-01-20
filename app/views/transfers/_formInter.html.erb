@@ -1,0 +1,39 @@
+
+
+<%= form_for [@bank,@transfer] do |f| %>
+  <div class="field">
+  <%= f.label :sender %>
+  <select name="transfer[sender]" id="transfer_sender">
+    <% (@bank.accounts).each do |i| %>
+      <option value="<%= i.iban %>"><%= i.iban+" ("+i.holder+")" %></option>
+    <% end %>
+  </select>
+  </div>
+  <br>
+  <div class="field">
+  <%= f.label :transfer_type %>
+  <%= f.text_field :transfer_type, size: 20, value: 'Inter-bank', readonly: true %>
+  </div>
+  <br>
+  <div class="field">
+  <%= f.label :beneficiary %>
+  (accounts of different banks)
+  <select name="transfer[beneficiary]" id="transfer_beneficiary">
+    <% (@other_banks_accounts).each do |i| %>
+      <% (i.accounts).each do |j| %>
+        <option value="<%= j.iban %>"><%= j.iban+" ("+j.holder+")" %></option>
+      <% end %>
+    <% end %>
+  </select>
+
+  </div>
+  <br>
+  <div class="field">
+  <%= f.label :amount %>
+  <%= f.text_field :amount, size: 20, required: true%>€
+  </div>
+  <br>
+
+  <%= f.submit 'Save' %>
+
+<% end %>

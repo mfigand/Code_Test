@@ -1,0 +1,34 @@
+
+
+<div class="">
+
+  <h2 class=""><%= @transfer.id%> </h2>
+  <br>
+
+  <section class="row">
+    <div class="">
+      <div class="col-md-6">
+        <ul>
+          <li> <strong>Sender:</strong> <span class="" >
+            <%= "#{@transfer.sender}" %></span>
+          </li>
+          <li> <strong>Beneficiary:</strong> <span class="" >
+            <%= "#{@transfer.beneficiary}" %> </span>
+          </li>
+          <li> <strong>Amount:</strong>
+            <%= "#{@transfer.amount}" %>
+          </li>
+          <li> <strong>Status:</strong>
+            <%= "#{@transfer.status}" %>
+          </li>
+          <br>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+
+<br>
+<a href="<%= root_path %>">Back to Home</a>

@@ -1,0 +1,22 @@
+
+<strong><h1 class="title ">Code Test Bank Transfers</h1></strong>
+<br>
+
+<h3><a href="/banks">Register New Bank</a></h3>
+
+<div>
+  <h3>Active banks:</h3>
+  <ul>
+    <% @bank.each do |bank| %>
+      <li value="<%= bank.name %>"><%= bank.name %>
+        - <a href="<%= bank_path(bank.id) %>">Show</a>
+        / <%= link_to("Delete", bank_path(bank),
+        method: :delete, data: {confirm: "Are you sure?"}) %>
+
+      </li>
+    <% end%>
+  </ul>
+</div>
+
+<br>
+<br>

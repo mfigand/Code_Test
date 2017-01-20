@@ -1,0 +1,14 @@
+<h2 class="">Make Inter-bank transfer</h2>
+
+<h4>Have 5€ commissions, a limit of 1000€ per transfer and 30% chance of failure.</h4>
+<br>
+
+<div style="color: red">
+  <strong><%= flash_message %></strong>
+</div>
+<br>
+
+<%= render "formInter" %>
+
+<br>
+<a href="<%= bank_path(params[:bank_id]) %>">Back to Bank</a>

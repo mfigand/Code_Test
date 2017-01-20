@@ -1,0 +1,34 @@
+
+<div class="error">
+  <%= flash_message %>
+</div>
+
+<div class="">
+
+  <h2 class=""><%= @account.iban%> </h2>
+  <br>
+
+  <section class="row">
+    <div class="">
+      <div class="col-md-6">
+        <ul>
+          <li> <strong>IBAN:</strong> <span class="" >
+            <%= "#{@account.iban}" %></span>
+          </li>
+          <li> <strong>Amount:</strong> <span class="" >
+            <%= "#{@account.amount}" %> </span>
+          </li>
+          <li> <strong>Holder:</strong>
+            <%= "#{@account.holder}" %>
+          </li>
+          <br>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+
+<br>
+<a href="<%= root_path %>">Back to Home</a>

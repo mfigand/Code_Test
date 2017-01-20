@@ -1,0 +1,15 @@
+<h2 class="title is-2"><%= current_bank.name%>`s accounts</h2>
+<br>
+
+
+<ul>
+  <% @accounts.each_with_index do |account, index| %>
+    <li> <strong>IBAN:</strong> <%= "#{account.IBAN}" %></li>
+    <li> <strong>Amount:</strong> <%= "#{account.amount}" %></li>
+    <li><a href="<%= bank_path(current_bank,account) %>">Show</a> - <a data-method="DELETE" href="<%= bank_path(current_bank,amount) %>">Delete</a></li>
+    <br>
+  <% end %>
+</ul>
+<br>
+
+<a href="<%= root_path %>">Back to Home</a>

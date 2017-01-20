@@ -1,0 +1,9 @@
+<h2>Edit <%= @account.iban %></h2>
+
+<%= render "form" %>
+
+<br>
+<%= link_to("Back to Account", bank_account_path(params[:bank_id],@account.id)) %>
+<br>
+<br>
+<a href="<%= root_path %>">Back to Home</a>

@@ -1,0 +1,22 @@
+
+
+<%= form_for [@bank,@account] do |f| %>
+  <div class="field">
+  <%= f.label :iban %>
+  <%= f.text_field :iban, size: 20 %>
+  </div>
+  <br>
+  <div class="field">
+  <%= f.label :amount %>
+  <%= f.number_field :amount, size: 20 %>
+  </div>
+  <br>
+  <div class="field">
+  <%= f.label :holder %>
+  <%= f.text_field :holder, size: 20%>
+  </div>
+  <br>
+
+  <%= f.submit 'Save' %>
+
+<% end %>

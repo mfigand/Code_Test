@@ -1,0 +1,9 @@
+<h2>Edit <%= @bank.name %></h2>
+
+<%= render "form" %>
+
+<br>
+<%= link_to("Back to Bank", bank_path(@bank.id)) %>
+<br>
+<br>
+<a href="<%= root_path %>">Back to Home</a>

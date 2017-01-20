@@ -1,0 +1,17 @@
+<h2 class="title is-2"><%= @bank.name%>`s accounts</h2>
+<br>
+
+<ul>
+  <% @accounts.each_with_index do |account, index| %>
+    <li> <strong>IBAN:</strong> <%= "#{account.iban}" %></li>
+    <li> <strong>Amount:</strong> <%= "#{account.amount}" %></li>
+    <li><a href="<%= bank_account_path(params[:bank_id],account.id) %>">Show</a></li>
+    <br>
+  <% end %>
+</ul>
+<br>
+<a href="<%= new_bank_account_path(@bank.id)%>" class="btn" >Create new Account for <%= @bank.name%></a>
+<br>
+<br>
+
+<a href="<%= root_path %>">Back to Home</a>

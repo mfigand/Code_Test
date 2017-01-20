@@ -1,0 +1,15 @@
+<h2 class="">Make Intra-bank transfer </h2>
+<h4>Don't have commissions, don't have limits and always succeed.</h4>
+<br>
+
+<div style="color: red">
+  <strong><%= flash_message %></strong>
+</div>
+
+
+<br>
+
+<%= render "formIntra" %>
+
+<br>
+<a href="<%= bank_path(params[:bank_id]) %>">Back to Bank</a>
