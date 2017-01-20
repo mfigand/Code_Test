@@ -12,11 +12,13 @@ $rails s
 
 ## Answers for lasts questions:
 Please also supply your answer to the following questions:
+
 • How would you improve your solution?
 If i'll know all the characteristics and purposes of the project maybe i would use a different DataBase
 that gives me better performance, when the DB will be populated.
 Also the part of making fail the 30% of Transfers randomly i think It would be better if it depended on something more clear.
-The user experience need a lot of changes and also the style, but given the time i consider this secundary.
+The user experience need a lot of changes and also the style, but given the time i consider this secondary.
+
 • How would you adapt your solution if transfers are not instantaneous?
 Using Callbacks inside my Processes or a solution to handle the queuing system, like Sidekiq.
 This prevents the user from waiting
@@ -60,11 +62,13 @@ The banks keep a list of all transfers and can be asked for the history of trans
 
 ## Questions:
 Please also supply your answer to the following questions:
+
 • How would you improve your solution?
 If i'll know all the characteristics and purposes of the project maybe i would use a different DataBase
 that gives me better performance, when the DB will be populated.
 Also the part of making fail the 30% of Transfers randomly i think It would be better if it depended on something more clear.
-The user experience need a lot of changes and also the style, but given the time i consider this secundary.
+The user experience need a lot of changes and also the style, but given the time i consider this secondary.
+
 • How would you adapt your solution if transfers are not instantaneous?
 Using Callbacks inside my Processes or a solution to handle the queuing system, like Sidekiq.
 This prevents the user from waiting
