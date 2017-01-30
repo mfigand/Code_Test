@@ -1,46 +1,41 @@
 
-<div class="error">
-  <%= flash_message %>
-</div>
+ <div class="content-section-a">
+      
+    <div class="container">
 
-<div class="">
-
-  <h2 class="title is-2 sync_label"><%= @bank.name%> </h2>
-  <br>
-
-  <section class="row">
-    <div class="statistics2 font_2">
-      <div class="col-md-6">
-        <ul>
-          <li> <strong>Address:</strong> <span class="js-branch-name" >
-            <%= "#{@bank.address}" %></span>
-          </li>
-          <li> <strong>Phone:</strong> <span class="js-address" >
-            <%= "#{@bank.phone}" %> </span>
-          </li>
-          <li> <strong>City:</strong>
-            <%= "#{@bank.city}" %>
-          </li>
-          <li> <strong>State:</strong>
-            <%= "#{@bank.state}" %>
-          </li>
-          <li> <strong>Country:</strong>
-            <%= "#{@bank.country}" %>
-          </li>
-          <br>
-        </ul>
+      <div class="error">
+        <%= flash_message %>
       </div>
-    </div>
-  </section>
 
-  <section class="row">
-    <div class="col-md-12">
-      <a href="<%= new_bank_account_path(@bank.id)%>" class="btn" >Create Account for <%= @bank.name%></a>
+        <div class="row">
+            <div class="col-lg-5 col-sm-12">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading"><%= @bank.name%></h2>
+                <p>Here you can see bank's info and choose to create an account</p>
+                <ul>
+                  <li> <strong>Address:</strong> <span class="js-branch-name" >
+                    <%= "#{@bank.address}" %></span>
+                  </li>
+                  <li> <strong>Phone:</strong> <span class="js-address" >
+                    <%= "#{@bank.phone}" %> </span>
+                  </li>
+                  <li> <strong>City:</strong>
+                    <%= "#{@bank.city}" %>
+                  </li>
+                  <li> <strong>State:</strong>
+                    <%= "#{@bank.state}" %>
+                  </li>
+                  <li> <strong>Country:</strong>
+                    <%= "#{@bank.country}" %>
+                  </li>
+                  <br>
+                </ul>
+                <a href="<%= new_bank_account_path(@bank.id)%>" class="btn" >Create Account for <%= @bank.name%></a>
+            </div>
+        </div>
+
     </div>
-  </section>
+    <!-- /.container -->
 
 </div>
-
-
-<br>
-<a href="<%= root_path %>">Back to Home</a>

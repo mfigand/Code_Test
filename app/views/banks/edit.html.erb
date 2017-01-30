@@ -1,9 +1,19 @@
-<h2>Edit <%= @bank.name %></h2>
 
-<%= render "form" %>
+ <div class="content-section-a">
+      
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-sm-12">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">Edit <%= @bank.name %></h2>
+                <p>Here you can edit bank's info</p>
+                <%= render "form" %>
+                <br><%= link_to("Back to Bank", bank_path(@bank.id)) %>
+            </div>
+        </div>
 
-<br>
-<%= link_to("Back to Bank", bank_path(@bank.id)) %>
-<br>
-<br>
-<a href="<%= root_path %>">Back to Home</a>
+    </div>
+    <!-- /.container -->
+
+</div>

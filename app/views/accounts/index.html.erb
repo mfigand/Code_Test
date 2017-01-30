@@ -1,17 +1,25 @@
-<h2 class="title is-2"><%= @bank.name%>`s accounts</h2>
-<br>
+ <div class="content-section-a">
+      
+    <div class="container">
 
-<ul>
-  <% @accounts.each_with_index do |account, index| %>
-    <li> <strong>IBAN:</strong> <%= "#{account.iban}" %></li>
-    <li> <strong>Amount:</strong> <%= "#{account.amount}" %></li>
-    <li><a href="<%= bank_account_path(params[:bank_id],account.id) %>">Show</a></li>
-    <br>
-  <% end %>
-</ul>
-<br>
-<a href="<%= new_bank_account_path(@bank.id)%>" class="btn" >Create new Account for <%= @bank.name%></a>
-<br>
-<br>
+        <div class="row">
+            <div class="col-lg-5 col-sm-12">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading"><%= @bank.name%>`s accounts</h2>
+                <ul>
+                  <% @accounts.each_with_index do |account, index| %>
+                    <li> <strong>IBAN:</strong> <%= "#{account.iban}" %></li>
+                    <li> <strong>Amount:</strong> <%= "#{account.amount}" %></li>
+                    <li><a href="<%= bank_account_path(params[:bank_id],account.id) %>">Show</a></li>
+                    <br>
+                  <% end %>
+                </ul>
+                <br><a href="<%= new_bank_account_path(@bank.id)%>" class="btn" >Create new Account for <%= @bank.name%></a>
+            </div>
+        </div>
 
-<a href="<%= root_path %>">Back to Home</a>
+    </div>
+    <!-- /.container -->
+
+</div>

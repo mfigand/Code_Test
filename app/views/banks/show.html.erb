@@ -1,101 +1,113 @@
-<div class="">
+ <div class="content-section-a">
+      
+    <div class="container">
 
-  <h1 class="title is-2 sync_label"><%= @bank.name%> </h1>
-
-  <section class="row">
-    <div class="statistics2 font_2">
-      <div class="col-md-3">
-        <h2 class="title is-2">Info:</h2>
-        <ul>
-          <li> <strong>Name:</strong> <span class="js-branch-name" >
-            <%= "#{@bank.name}" %></span>
-          </li>
-          <li> <strong>Address:</strong> <span class="js-branch-name" >
-            <%= "#{@bank.address}" %></span>
-          </li>
-          <li> <strong>Phone:</strong> <span class="js-address" >
-            <%= "#{@bank.phone}" %> </span>
-          </li>
-          <li> <strong>City:</strong>
-            <%= "#{@bank.city}" %>
-          </li>
-          <li> <strong>State:</strong>
-            <%= "#{@bank.state}" %>
-          </li>
-          <li> <strong>Country:</strong>
-            <%= "#{@bank.country}" %>
-          </li>
-        </ul>
-        <br>
-        <a href="<%= edit_bank_path(@bank.id)%>" class="btn" >Edit Bank Info</a>
-        <br>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <h2 class="title is-2">Accounts:</h2>
-      <a href="<%= new_bank_account_path(@bank.id)%>" class="btn" >Create Account for <%= @bank.name%></a>
-      <br>
-      <ul>
-        <% @accounts.each_with_index do |account, index| %>
-          <li> <strong>IBAN:</strong> <%= "#{account.iban}" %></li>
-          <li> <strong>Amount:</strong> <%= "#{account.amount}" %></li>
-          <li> <strong>Holder:</strong> <%= "#{account.holder}" %></li>
-          <li><a href="<%= bank_account_path(params[:id],account.id) %>">Show</a>
-            / <%= link_to("Delete", bank_account_path(params[:id],account.id), method: :delete, data: {confirm: "Are you sure?"}) %>
-          </li>
-          <br>
-        <% end %>
-      </ul>
-    </div>
-    <div class="col-md-6">
-      <h2 class="title is-2">History of Transfers:</h2>
-      <label for="">
-        <%= @intra_transfers.length %> Intra-bank Transfers
-      </label>
-      <br>
-      <label for="">
-        <%= @inter_transfers.length %> Inter-bank Transfers
-      </label>
       <div class="row">
-        <div class="col-md-6">
-          <a href="<%= new_bank_transfer_path(params[:id])%>" class="btn" >Make Intra-bank transfer</a>
-          <br>
-          <ul>
-            <% @intra_transfers.each_with_index do |transfer, index| %>
-                <li> <strong>Sender:</strong> <%= "#{transfer.sender}" %></li>
-                <li> <strong>Beneficiary:</strong> <%= "#{transfer.beneficiary}" %></li>
-                <li> <strong>Type:</strong> <%= "#{transfer.transfer_type}" %></li>
-                <li> <strong>Amount:</strong> <%= "#{transfer.amount}" %></li>
-                <li> <strong>Status:</strong> <%= "#{transfer.status}" %></li>
-                <li><a href="<%= bank_transfer_path(params[:id],transfer.id) %>">Show</a>
-                  / <%= link_to("Delete", bank_transfer_path(params[:id],transfer.id), method: :delete, data: {confirm: "Are you sure?"}) %>
-                </li>
-                <br>
-            <% end %>
-          </ul>
+            <div class="col-lg-5 col-sm-12">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">Bank Name: <%= @bank.name %></h2>
+                <p></p>
+            </div>
         </div>
-        <div class="col-md-6">
-          <a href="<%= new_bank_InterTransfer_path(params[:id])%>" class="btn" >Make Inter-bank transfer</a>
-          <br>
-          <ul>
-            <% @inter_transfers.each_with_index do |transfer, index| %>
-                <li> <strong>Sender:</strong> <%= "#{transfer.sender}" %></li>
-                <li> <strong>Beneficiary:</strong> <%= "#{transfer.beneficiary}" %></li>
-                <li> <strong>Type:</strong> <%= "#{transfer.transfer_type}" %></li>
-                <li> <strong>Amount:</strong> <%= "#{transfer.amount}" %></li>
-                <li> <strong>Status:</strong> <%= "#{transfer.status}" %></li>
-                <li><a href="<%= bank_transfer_path(params[:id],transfer.id) %>">Show</a>
-                  / <%= link_to("Delete", bank_transfer_path(params[:id],transfer.id), method: :delete, data: {confirm: "Are you sure?"}) %>
-                </li>
-                <br>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <br>
-  <a href="<%= root_path %>">Back to Home</a>
+      <section class="row">
+          <div class="statistics2 font_2">
+            <div class="col-md-3">
+              <h2 class="title is-2">Info:</h2>
+              <ul>
+                <li> <strong>Name:</strong> <span class="js-branch-name" >
+                  <%= "#{@bank.name}" %></span>
+                </li>
+                <li> <strong>Address:</strong> <span class="js-branch-name" >
+                  <%= "#{@bank.address}" %></span>
+                </li>
+                <li> <strong>Phone:</strong> <span class="js-address" >
+                  <%= "#{@bank.phone}" %> </span>
+                </li>
+                <li> <strong>City:</strong>
+                  <%= "#{@bank.city}" %>
+                </li>
+                <li> <strong>State:</strong>
+                  <%= "#{@bank.state}" %>
+                </li>
+                <li> <strong>Country:</strong>
+                  <%= "#{@bank.country}" %>
+                </li>
+              </ul>
+              <br>
+              <a href="<%= edit_bank_path(@bank.id)%>" class="btn" >Edit Bank Info</a>
+              <br>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <h2 class="title is-2">Accounts:</h2>
+            <a href="<%= new_bank_account_path(@bank.id)%>" class="btn" >Create Account for <%= @bank.name%></a>
+            <br>
+            <ul>
+              <% @accounts.each_with_index do |account, index| %>
+                <li> <strong>IBAN:</strong> <%= "#{account.iban}" %></li>
+                <li> <strong>Amount:</strong> <%= "#{account.amount}" %></li>
+                <li> <strong>Holder:</strong> <%= "#{account.holder}" %></li>
+                <li><a href="<%= bank_account_path(params[:id],account.id) %>">Show</a>
+                  / <%= link_to("Delete", bank_account_path(params[:id],account.id), method: :delete, data: {confirm: "Are you sure?"}) %>
+                </li>
+                <br>
+              <% end %>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h2 class="title is-2">History of Transfers:</h2>
+            <label for="">
+              <%= @intra_transfers != nil ? @intra_transfers.length : 0 %> Intra-bank Transfers
+            </label>
+            <br>
+            <label for="">
+              <%= @inter_transfers != nil ? @inter_transfers.length : 0 %> Inter-bank Transfers
+            </label>
+            <div class="row">
+              <div class="col-md-6">
+                <a href="<%= new_bank_transfer_path(params[:id])%>" class="btn" >Make Intra-bank transfer</a>
+                <br>
+                <ul>
+                  <% if @intra_transfers != nil %>
+                    <% @intra_transfers.each_with_index do |transfer, index| %>
+                        <li> <strong>Sender:</strong> <%= "#{transfer.sender}" %></li>
+                        <li> <strong>Beneficiary:</strong> <%= "#{transfer.beneficiary}" %></li>
+                        <li> <strong>Type:</strong> <%= "#{transfer.transfer_type}" %></li>
+                        <li> <strong>Amount:</strong> <%= "#{transfer.amount}" %></li>
+                        <li> <strong>Status:</strong> <%= "#{transfer.status}" %></li>
+                        <li><a href="<%= bank_transfer_path(params[:id],transfer.id) %>">Show</a>
+                          / <%= link_to("Delete", bank_transfer_path(params[:id],transfer.id), method: :delete, data: {confirm: "Are you sure?"}) %>
+                        </li>
+                        <br>
+                    <% end %>
+                  <% end %>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <a href="<%= new_bank_InterTransfer_path(params[:id])%>" class="btn" >Make Inter-bank transfer</a>
+                <br>
+                <ul>
+                  <% if @inter_transfers != nil %>
+                    <% @inter_transfers.each_with_index do |transfer, index| %>
+                        <li> <strong>Sender:</strong> <%= "#{transfer.sender}" %></li>
+                        <li> <strong>Beneficiary:</strong> <%= "#{transfer.beneficiary}" %></li>
+                        <li> <strong>Type:</strong> <%= "#{transfer.transfer_type}" %></li>
+                        <li> <strong>Amount:</strong> <%= "#{transfer.amount}" %></li>
+                        <li> <strong>Status:</strong> <%= "#{transfer.status}" %></li>
+                        <li><a href="<%= bank_transfer_path(params[:id],transfer.id) %>">Show</a>
+                          / <%= link_to("Delete", bank_transfer_path(params[:id],transfer.id), method: :delete, data: {confirm: "Are you sure?"}) %>
+                        </li>
+                        <br>
+                    <% end %>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+    </div>
+    <!-- /.container -->
 
 </div>

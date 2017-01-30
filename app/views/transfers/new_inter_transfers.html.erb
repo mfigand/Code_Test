@@ -1,14 +1,23 @@
-<h2 class="">Make Inter-bank transfer</h2>
 
-<h4>Have 5€ commissions, a limit of 1000€ per transfer and 30% chance of failure.</h4>
-<br>
+ <div class="content-section-a">
+      
+    <div class="container">
+      <div style="color: red">
+        <strong><%= flash_message %></strong>
+      </div>
+        <div class="row">
+            <div class="col-lg-5 col-sm-12">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">Make Inter-bank transfer</h2>
+                <p>Have 5€ commissions, a limit of 1000€ per transfer and 30% chance of failure.</p>
+                <br>
+                <%= render "formInter" %>
+                <br><a href="<%= bank_path(params[:bank_id]) %>">Back to Bank</a>
+            </div>
+        </div>
 
-<div style="color: red">
-  <strong><%= flash_message %></strong>
+    </div>
+    <!-- /.container -->
+
 </div>
-<br>
-
-<%= render "formInter" %>
-
-<br>
-<a href="<%= bank_path(params[:bank_id]) %>">Back to Bank</a>

@@ -1,37 +1,36 @@
-<div class="">
 
-  <h2 class="">Transfer ID: <%= @transfer.id%> </h2>
-  <br>
+ <div class="content-section-a">
+      
+    <div class="container">
+      
+        <div class="row">
+            <div class="col-lg-5 col-sm-12">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">Transfer ID: <%= @transfer.id%></h2>
+                <ul>
+                  <li> <strong>Sender:</strong> <span class="" >
+                    <%= "#{@transfer.sender}" %></span>
+                  </li>
+                  <li> <strong>Beneficiary:</strong> <span class="" >
+                    <%= "#{@transfer.beneficiary}" %></span>
+                  </li>
+                  <li> <strong>Amount:</strong>
+                    <%= "#{@transfer.amount}" %>
+                  </li>
+                  <li> <strong>Status:</strong>
+                    <%= "#{@transfer.status}" %>
+                  </li>
+                  <li> <strong>Type:</strong>
+                    <%= "#{@transfer.transfer_type}" %>
+                  </li>
+                  <br>
+                </ul>
+                <br><a href="<%= bank_path(params[:bank_id]) %>">Back to Bank</a>
+            </div>
+        </div>
 
-  <section class="row">
-    <div class="">
-      <div class="col-md-6">
-        <ul>
-          <li> <strong>Sender:</strong> <span class="" >
-            <%= "#{@transfer.sender}" %></span>
-          </li>
-          <li> <strong>Beneficiary:</strong> <span class="" >
-            <%= "#{@transfer.beneficiary}" %></span>
-          </li>
-          <li> <strong>Amount:</strong>
-            <%= "#{@transfer.amount}" %>
-          </li>
-          <li> <strong>Status:</strong>
-            <%= "#{@transfer.status}" %>
-          </li>
-          <li> <strong>Type:</strong>
-            <%= "#{@transfer.transfer_type}" %>
-          </li>
-          <br>
-        </ul>
-      </div>
     </div>
-  </section>
-
-  <br>
-  <a href="<%= bank_path(params[:bank_id]) %>">Back to Bank</a>
-  <br>
-  <br>
-  <a href="<%= root_path %>">Back to Home</a>
+    <!-- /.container -->
 
 </div>

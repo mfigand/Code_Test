@@ -14,7 +14,7 @@ class AccountsController < ApplicationController
     @account = Account.new account_params
     @account.bank_id = params[:bank_id]
     if @account.save
-      flash[:notice] = "Account created succesfully"
+      flash[:notice] = "Account created succesfully!"
       render "show"
     else
       flash[:alert] = "ALERT! Account not created"
@@ -30,7 +30,7 @@ class AccountsController < ApplicationController
   def update
     @account = Account.find(params[:id])
     if @account.update_attributes account_params
-      @message = "Tranferencia realizada con éxito!"
+      @message = "Succesfully update!"
       render "show"
     else
       render "edit"

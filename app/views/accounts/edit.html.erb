@@ -1,9 +1,23 @@
-<h2>Edit <%= @account.iban %></h2>
+ <div class="content-section-a">
+      
+    <div class="container">
 
-<%= render "form" %>
+      <div class="error">
+        <%= flash_message %>
+      </div>
 
-<br>
-<%= link_to("Back to Account", bank_account_path(params[:bank_id],@account.id)) %>
-<br>
-<br>
-<a href="<%= root_path %>">Back to Home</a>
+        <div class="row">
+            <div class="col-lg-5 col-sm-12">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">Accountant IBAN: <%= @account.iban %></h2>
+                <p>Here you can edit account's data</p>
+                <%= render "form" %>
+                <br><%= link_to("Back to Account", bank_account_path(params[:bank_id],@account.id)) %>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+</div>

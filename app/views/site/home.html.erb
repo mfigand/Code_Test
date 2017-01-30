@@ -1,22 +1,142 @@
+<!-- Header -->
+    <a name="code_test"></a>
+    <div class="intro-header">
+        <div class="container">
 
-<strong><h1 class="title ">Code Test Bank Transfers</h1></strong>
-<br>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1>Code Test</h1>
+                        <h3>Bank Transfers</h3>
+                        <hr class="intro-divider">
+                        <p class="lead">To start you need to Register a New Bank and create accounts inside. Now you can make Intra-bank transfers.
+                          <br> Repeat this steps for a second bank and then you will be able to make Inter-bank transfers.
+                          <br> For more info about this test you can see full instructions <a href="/Code_Test_Banking_3h.pdf" target="_blank" style="color:#ff7f50">here</a>
+                        </p>
+                        <ul class="list-inline intro-social-buttons">
+                            <li>
+                                <a href="/banks" class="btn btn-default btn-lg"><i class="fa fa-university fa-fw"></i> <span class="network-name">Register New Bank</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-<h3><a href="/banks">Register New Bank</a></h3>
+        </div>
+        <!-- /.container -->
 
-<div>
-  <h3>Active banks:</h3>
-  <ul>
-    <% @bank.each do |bank| %>
-      <li value="<%= bank.name %>"><%= bank.name %>
-        - <a href="<%= bank_path(bank.id) %>">Show</a>
-        / <%= link_to("Delete", bank_path(bank),
-        method: :delete, data: {confirm: "Are you sure?"}) %>
+    </div>
+    <!-- /.intro-header -->
 
-      </li>
-    <% end%>
-  </ul>
-</div>
+    <!-- Page Content -->
 
-<br>
-<br>
+  <a  name="active_banks"></a>
+    <div class="content-section-a">
+      
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Active banks</h2>
+                    <p>Here you can see the banks you have created</p>
+                    <ul>
+                      <% @bank.each do |bank| %>
+                        <li value="<%= bank.name %>"><%= bank.name %>
+                          - <a href="<%= bank_path(bank.id) %>">Show</a>
+                          / <%= link_to("Delete", bank_path(bank),
+                          method: :delete, data: {confirm: "Are you sure?"}) %>
+                        </li>
+                      <% end%>
+                    </ul>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="http://d225fqn1pkg6mt.cloudfront.net/wp-content/uploads/2013/09/Money_bank_resize.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">History of Transfers:</h2>
+                    <ul>
+                      <% @bank.each do |bank| %>
+                        <li value="<%= bank.name %>"><%= bank.name %>
+                            <% if bank.transfers.length != 0 %>
+                                <!-- Get intra-bank transfer -->
+                                <% @intra_transfers = 0 %>
+                                <% bank.transfers.each do |transfer| %>
+                                    <% transfer.transfer_type == 'Intra-bank' ?  @intra_transfers += 1 : @intra_transfers += 0 %>
+                                <% end %>
+                                <br>
+                                <label for="">
+                                <% @intra_transfers %> Intra-bank Transfers
+                                </label>
+                                <!-- Get Inter-bank tranfers -->
+                                <% @inter_transfers = 0 %>
+                                <% bank.transfers.each do |transfer| %>
+                                    <% transfer.transfer_type == 'Inter-bank' ?  @inter_transfers += 1 : @inter_transfers += 0 %>
+                                <% end %>
+                                <br>
+                                <label for="">
+                                <% @inter_transfers %> Inter-bank Transfers
+                                </label>
+                            <% end %>
+                        </li>
+                      <% end%>
+                    </ul>
+
+                    
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive" src="http://www.dreamworldforex.com/wp-content/uploads/2014/02/major-banks.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+
+  <a  name="contact"></a>
+    <div class="banner">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>You can follow me on:</h2>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="list-inline banner-social-buttons">
+                        <li>
+                            <a href="https://www.linkedin.com/in/manuelfigueroaandrade" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/mfigand" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/FigandM" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.banner -->
+

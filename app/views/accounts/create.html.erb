@@ -1,34 +1,34 @@
+ <div class="content-section-a">
+      
+    <div class="container">
 
-<div class="error">
-  <%= flash_message %>
-</div>
-
-<div class="">
-
-  <h2 class=""><%= @account.iban%> </h2>
-  <br>
-
-  <section class="row">
-    <div class="">
-      <div class="col-md-6">
-        <ul>
-          <li> <strong>IBAN:</strong> <span class="" >
-            <%= "#{@account.iban}" %></span>
-          </li>
-          <li> <strong>Amount:</strong> <span class="" >
-            <%= "#{@account.amount}" %> </span>
-          </li>
-          <li> <strong>Holder:</strong>
-            <%= "#{@account.holder}" %>
-          </li>
-          <br>
-        </ul>
+      <div class="error">
+        <%= flash_message %>
       </div>
+
+        <div class="row">
+            <div class="col-lg-5 col-sm-12">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">Account IBAN: <%= @account.iban%></h2>
+                <p></p>
+                <ul>
+                  <li> <strong>IBAN:</strong> <span class="" >
+                    <%= "#{@account.iban}" %></span>
+                  </li>
+                  <li> <strong>Amount:</strong> <span class="" >
+                    <%= "#{@account.amount}" %> </span>
+                  </li>
+                  <li> <strong>Holder:</strong>
+                    <%= "#{@account.holder}" %>
+                  </li>
+                  <br>
+                </ul>
+                <br><a href="<%= bank_path(params[:bank_id]) %>">Back to <%= @bank.name%></a>
+            </div>
+        </div>
+
     </div>
-  </section>
+    <!-- /.container -->
 
 </div>
-
-
-<br>
-<a href="<%= root_path %>">Back to Home</a>

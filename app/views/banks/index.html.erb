@@ -1,15 +1,24 @@
-<h2 class="title is-2"><%= current_bank.name%>`s accounts</h2>
-<br>
 
+ <div class="content-section-a">
+      
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-sm-12">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading"><%= current_bank.name%>`s accounts</h2>
+                <ul>
+                  <% @accounts.each_with_index do |account, index| %>
+                    <li> <strong>IBAN:</strong> <%= "#{account.IBAN}" %></li>
+                    <li> <strong>Amount:</strong> <%= "#{account.amount}" %></li>
+                    <li><a href="<%= bank_path(current_bank,account) %>">Show</a> - <a data-method="DELETE" href="<%= bank_path(current_bank,amount) %>">Delete</a></li>
+                    <br>
+                  <% end %>
+                </ul>
+            </div>
+        </div>
 
-<ul>
-  <% @accounts.each_with_index do |account, index| %>
-    <li> <strong>IBAN:</strong> <%= "#{account.IBAN}" %></li>
-    <li> <strong>Amount:</strong> <%= "#{account.amount}" %></li>
-    <li><a href="<%= bank_path(current_bank,account) %>">Show</a> - <a data-method="DELETE" href="<%= bank_path(current_bank,amount) %>">Delete</a></li>
-    <br>
-  <% end %>
-</ul>
-<br>
+    </div>
+    <!-- /.container -->
 
-<a href="<%= root_path %>">Back to Home</a>
+</div>

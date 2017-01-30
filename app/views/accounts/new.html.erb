@@ -1,7 +1,21 @@
-<h2 class="">Create new Account</h2>
-<br>
+ <div class="content-section-a">
+      
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-sm-12">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">Create new Account</h2>
+                <p>Here you can create a new account</p>
+                <%= render "form" %>
+                <br><a href="<%= bank_path(params[:bank_id]) %>">Back to <%= @bank.name%></a>
+            </div>
+        </div>
 
-<%= render "form" %>
+    </div>
+    <!-- /.container -->
 
-<br>
-<a href="<%= bank_path(params[:bank_id]) %>">Back to Bank</a>
+</div>
+
+
+
